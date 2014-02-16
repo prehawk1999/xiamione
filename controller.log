@@ -1,0 +1,35 @@
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs?
+INFO:root:<class 'errorinfo.ListeningWarning'>: parseID: Is there a new pattern of IDs? in: Adrian Von Ziegler.jpg, out: None
+WARNING:root:<class 'errorinfo.ListeningError'>: TEMP_DIR dir not found!
+INFO:root:<class '__main__.CreatorWarning'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class '__main__.CreatorError'>: fd;askfj;sadlfadfasdfasd
+INFO:root:<class '__main__.XqueryWarning'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class '__main__.XqueryError'>: fd;askfj;sadlfadfasdfasd
+INFO:root:<class '__main__.ListeningWarning'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class '__main__.ControllerError'>: fd;askfj;sadlfadfasdfasd
+INFO:root:<class '__main__.CreatorWarning'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class '__main__.CreatorError'>: fd;askfj;sadlfadfasdfasd
+INFO:root:<class '__main__.XqueryWarning'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class '__main__.XqueryError'>: fd;askfj;sadlfadfasdfasd
+INFO:root:<class '__main__.ListeningWarning'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class '__main__.ControllerError'>: fd;askfj;sadlfadfasdfasd
+WARNING:root:<class 'errorinfo.ListeningError'>: TEMP_DIR dir not found!
+WARNING:root:<class 'errorinfo.ListeningError'>: TEMP_DIR dir not found!
