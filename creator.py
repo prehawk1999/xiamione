@@ -73,12 +73,12 @@ class Creator:
         except Exception, e:
             return u'Failed to Move! %s' % e.message
         else:
-            return u'Success to move!'
+            return u'%s -by- %s -from- %s' % (self.tags['TIT2'], self.tags['TPE1'], self.tags['TALB'])
 
     def clear(self):
         if self.done:
             os.remove(self.temp)
-            print u'%s done!' % os.path.basename(self.temp)
+            print u'%s\t -BY- \t%s\t -FROM- \t%s <done!>' % (self.tags['TIT2'], self.tags['TPE1'], self.tags['TALB'])
         else:
             raise CreatorError('failed to transmitt! no move!')
             
@@ -117,7 +117,7 @@ class Creator:
                 audio = ID3(self.lpath)
             except ID3NoHeaderError:
                 audio = ID3()
-
+                audio.update_to_v23()
                 audio.add(TIT2(encoding=3, text=[self.tags['TIT2']] ))
                 audio.add(TALB(encoding=3, text=[self.tags['TALB']] ))
                 audio.add(TPE1(encoding=3, text=[self.tags['TPE1']] ))

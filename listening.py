@@ -97,8 +97,8 @@ class Listening(object):
         m.append(re.match(r'\d{2}%20(\d+)_\d+(\[\d?\])?', s))
         m.append(re.match(r'\d{2}_(\d+)_\d+(\[\d?\])?', s))
         m.append(re.match(r'(\d+)_\d+_\w(\[\d\])?', s))
-        m.append(re.match(\
-            u'.+_\u867e\u5c0f\u7c73\u6253\u789f\u4e2d_(\d+)_\d+_l', s))
+        m.append(re.match(u'.+_\u867e\u5c0f\u7c73\u6253\u789f\u4e2d_(\d+)_\d+_l', s))
+        m.append(re.match(r'.+_(\d+)_\d+_l', s))
 
         for p in m:
             if p: return p.group(1)
@@ -181,34 +181,34 @@ class WEBlistening(Listening):
         f = self.getNowplaying()
         self.lpath = f['path']
         self.lid = 0
-
-    def getNowplaying(self):
-        fl = []
-        for dirname, subdirs, files in os.walk(C_CACHE):
-            for fname in files:
-                if fname.startswith('f_'):
-                    full_path = os.path.join(dirname, fname)
-                    while True:
-                        try:
-                            if MP3(full_path).info.sketchy == False:
-                                mtime = os.stat(full_path).st_ctime
-                                fl.append({'name':fname,
-                                           'path':full_path,
-                                           'mtime':mtime,
-                                           'cov' : None})
-                            break
-                        except HeaderNotFoundError, e:
-                            break
-                        except IOError, e:
-                            time.sleep(1)
-                            continue
-        fl.sort(key=lambda x:x['mtime'], reverse=True)
-        try:
-            for i in range(1, len(fl)):
-                    os.remove(fl[i]['path'])
-            return fl[0]
-        except Exception: return
-        
+# 
+#     def getNowplaying(self):
+#         fl = []
+#         for dirname, subdirs, files in os.walk(C_CACHE):
+#             for fname in files:
+#                 if fname.startswith('f_'):
+#                     full_path = os.path.join(dirname, fname)
+#                     while True:
+#                         try:
+#                             if MP3(full_path).info.sketchy == False:
+#                                 mtime = os.stat(full_path).st_ctime
+#                                 fl.append({'name':fname,
+#                                            'path':full_path,
+#                                            'mtime':mtime,
+#                                            'cov' : None})
+#                             break
+#                         except HeaderNotFoundError, e:
+#                             break
+#                         except IOError, e:
+#                             time.sleep(1)
+#                             continue
+#         fl.sort(key=lambda x:x['mtime'], reverse=True)
+#         try:
+#             for i in range(1, len(fl)):
+#                     os.remove(fl[i]['path'])
+#             return fl[0]
+#         except Exception: return
+#         
 class FILElistening(Listening):
     '''Get specific file and parse the id from its file name.
 
@@ -253,8 +253,11 @@ if __name__ == '__main__':
     
     #n = IElistening()
     print "****Module testing, the result will be display below****"
-    n = ListeningProbe('dir')
-    print n.lpath, n.lid
+    n = FILElistening(u'正在播放_星をかぞえて_三谷朋世_1772602584_11456101_l')
+    if not n.noplaying:
+        print n.lpath, n.lid
+    else:
+        print u'正在播放_星をかぞえて_三谷朋世_1772602584_11456101_l'
     
     #n = FILElistening('E:/Exp/1769948048_1879231_l.mp3')
     #print n.lpath, n.lid

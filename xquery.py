@@ -253,9 +253,6 @@ class WebSite(Query):
 
 class UrlPage(object):
     
-    def __init__(self):
-        pass
-
     def __init__(self, argv='',  argtype=u'song'):
         
         m = re.match(XIAMI_IDPATTERN, argv)
@@ -276,7 +273,7 @@ class UrlPage(object):
         request.add_header('User-Agent', 'Mozilla/4.0 (compatible; MSIE 8.0; \
         Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.5.30729; \
         .NET CLR 3.0.4506.2152; .NET4.0C; .NET4.0E; Zune 4.7) LBBROWSER')
-        
+        time_retry = 0
         try:
             response = urllib2.urlopen(request)
             return response

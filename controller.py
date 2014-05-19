@@ -51,24 +51,32 @@ class DIRController(object):
 
     def start(self):
         self.started = True
-        for n in range(len(self.probe.playing.lpath) ):
+        for n in range(len(self.probe.playing.lpath)):
             lpath = self.probe.playing.lpath[n]
             lid = self.probe.playing.lid[n]
-            print n, lid
             q = TagQuery(lid, dbfile=DB_FILE)
             c = Creator(TEMP_DIR, lpath)
             q.expandInfo()
             tags = q.gettags()
             c.ensureEnv(tags)
+            print n
             c.move()
             c.clear()
-
+        print u'<\t -All Done!- \t>'
 class FlashGotController(object):
 
     def __init__(self):
         pass
 
+
+class Runner(object):
     
+    def __init__(self):
+        pass
+    
+    def start(self):
+        pass
+
 
 if __name__ == '__main__':
     d = DIRController()
