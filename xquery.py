@@ -270,14 +270,14 @@ class UrlPage(object):
         (v1.1)input a url and output response. Typically its an html document
         '''
         request = urllib2.Request(url)
-        request.add_header('User-Agent', 'Mozilla/4.0 (compatible; MSIE 8.0; \
-        Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET CLR 3.5.30729; \
-        .NET CLR 3.0.4506.2152; .NET4.0C; .NET4.0E; Zune 4.7) LBBROWSER')
-        time_retry = 0
+        request.add_header('User-Agent', 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:29.0) Gecko/20100101 Firefox/29.0')
+        #time.sleep(0.5);
         try:
             response = urllib2.urlopen(request)
-            return response
+            html = response.read()
+            return html
         except:
+            print url
             raise XqueryError('UrlPage._getResponse: urlopen error %s' % url)
 
 
@@ -299,7 +299,7 @@ class UrlPage(object):
 
     def parseUrl(self):
         m = re.match(XIAMI_IDPATTERN, self.url)
-        self.html = self._getResponse(self.url).read()
+        self.html = self._getResponse(self.url)
         
         if m: #url是合法的xiami链接 m.group(1) :      type, m.group(2): id
             if m.group(1) == u'song':
@@ -316,7 +316,7 @@ class UrlPage(object):
                 ret_lst, next_ref = AlbLstPage(self.html).parsePage()
                 album_lst.extend(ret_lst)
                 while next_ref:
-                    html = self._getResponse(next_ref).read()
+                    html = self._getResponse(next_ref)
                     ret_lst, next_ref = AlbLstPage(html).parsePage()
                     album_lst.extend(ret_lst)
                 self.info = album_lst
