@@ -1,5 +1,5 @@
 # -*- coding: UTF-8 -*-
-import sys, os, re, time, urllib, urllib2, lxml, shutil, logging, sqlite3
+import re, urllib2, sqlite3
 from pyquery import PyQuery
 from errorinfo import *
 
@@ -82,7 +82,7 @@ class DataBase(Query):
         u"INSERT INTO 'artist' VALUES (%d, '%s', '%s')" % \
         (int(self.nextOne.artistinfo['id']), tags['TPE0'], tags['art_data'])
 
-        sql = sql_song + u';' + sql_album + u';' +sql_artist
+        #sql = sql_song + u';' + sql_album + u';' +sql_artist
         self.insertSql(sql_song, sql_album, sql_artist)
         self.tags = tags
 
